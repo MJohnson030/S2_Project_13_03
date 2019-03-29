@@ -7,8 +7,8 @@
 
    Crossword Puzzle Script
    
-   Author: 
-   Date:   
+   Author: Millione Johnson
+   Date: 3/28/19
    
    Global Variables
    ================
@@ -50,9 +50,37 @@
 */
 
 
+var allLetters;
+
+var currentLetters = puzzleLetter;
+
+var wordletters;
+
+var acrossClue;
+
+var downClue;
+
+var typeDirection = right;
+
+window.onload = init;
+
+function init() {
+      allLetters = document.querySelectorAll("table#crossword span");
+      currentLetter = allLetters[0];
+      var downID = currentLetter.dataset.clueA;
+      var acrossID = currentLetter.dataset.clueD;
+      acrossClue = document.getElementById("acrossID");
+      downClue = document.getElementById("downID");
+}
 
 
-
+function formatPuzzle() {
+      for(var i = 0; i < allLetters.length; i++) {
+            allLetters[i].style.backgroundColor = ";"
+      }
+      acrossClue.style.color = "";
+      downClue.style.color = "";
+}
    
 
 
